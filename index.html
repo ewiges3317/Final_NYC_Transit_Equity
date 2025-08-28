@@ -114,6 +114,34 @@
         .github-link:hover {
             background: #555;
         }
+        .chart-container {
+            margin: 40px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chart-container h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .chart-container p {
+            font-size: 1.1em;
+            color: #555;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
         ul {
             padding-left: 20px;
         }
@@ -146,8 +174,8 @@
                 NYC Taxi Zones Studied
             </div>
             <div class="stat-card">
-                <span class="stat-number">70%</span>
-                Highest Zone Dependency (Williamsburg North)
+                <span class="stat-number">12.1%</span>
+                Transit Equity Gap (Staten Island vs Manhattan)
             </div>
         </div>
 
@@ -156,6 +184,29 @@
             <p><strong>Geographic Disparities:</strong> Significant overnight transit reliance varies dramatically across NYC boroughs and zones</p>
             <p><strong>Service Gaps:</strong> Critical gaps exist during 10PM-1AM when demand peaks in key zones</p>
             <p><strong>Affected Communities:</strong> Late-night workers and lower-income neighborhoods face greatest burden</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📈 Key Findings: Transit Equity Data Visualizations</h2>
+        <p>These simplified visualizations immediately reveal critical transit equity issues across NYC. Each chart tells one clear story about transportation disparities.</p>
+        
+        <div class="chart-container">
+            <h3>🌙 Highest Overnight Transit Dependence</h3>
+            <img src="visualizations/top_5_zones_overnight_reliance_simple.png" alt="Top 5 NYC zones with highest overnight transit dependence">
+            <p><strong>Key Finding:</strong> Five Manhattan zones show over 40% of all taxi trips occur during overnight hours (10PM-6AM), with Lower East Side leading at 59%. This reveals critical dependence on overnight transportation in dense urban areas.</p>
+        </div>
+        
+        <div class="chart-container">
+            <h3>🏙️ Geographic Transit Equity Gap</h3>
+            <img src="visualizations/borough_equity_gap_simple.png" alt="Borough comparison showing transit equity gaps between Manhattan and outer boroughs">
+            <p><strong>Key Finding:</strong> Outer boroughs show significantly higher overnight transit dependence than Manhattan, with Staten Island at 29.3% vs Manhattan at 17.2% - a 12.1 percentage point equity gap revealing transportation disparities.</p>
+        </div>
+        
+        <div class="chart-container">
+            <h3>⏰ Critical Service Gaps Timeline</h3>
+            <img src="visualizations/overnight_service_gap_timeline_simple.png" alt="Timeline showing critical service gaps during overnight hours when demand drops">
+            <p><strong>Key Finding:</strong> Demand drops 11.7x from 10PM peak (335K trips) to 5AM low (29K trips), revealing critical service gaps during early morning hours when people still need transportation but options are severely limited.</p>
         </div>
     </div>
 
@@ -178,107 +229,4 @@
             <span class="tech-tag">DuckDB</span>
             <span class="tech-tag">pandas</span>
             <span class="tech-tag">matplotlib</span>
-            <span class="tech-tag">seaborn</span>
-            <span class="tech-tag">Jupyter</span>
-            <span class="tech-tag">SQL</span>
-        </div>
-
-        <div class="highlight-box">
-            <h3>📊 Key Metric Definition</h3>
-            <p><strong>Overnight Reliance Formula:</strong></p>
-            <code>(Overnight Trips ÷ Total Trips) × 100</code>
-            <p>Percentage of total trips occurring during overnight hours (10:00 PM to 5:59 AM)</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🏗️ Technical Implementation</h2>
-        
-        <h3>🔄 19-Step SQL Workflow</h3>
-        <ul>
-            <li><strong>Data Processing (Steps 1-4):</strong> Union monthly Parquet files, clean data, add overnight flags, enrich with zone lookups</li>
-            <li><strong>Analysis (Steps 5-9):</strong> Calculate overnight reliance by zone and borough, identify peak hours and patterns</li>
-            <li><strong>Validation (Steps 10-13):</strong> Row totals, fare sanity checks, tip analysis for data quality assurance</li>
-            <li><strong>Export (Steps 14-19):</strong> Generate CSV outputs for visualization and further analysis</li>
-        </ul>
-
-        <h3>📁 Project Structure</h3>
-        <div class="code-block">
-Final_NYC_Transit_Equity/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── data/
-│   ├── overnight_reliance_by_pu.csv
-│   ├── overnight_reliance_by_borough.csv
-│   ├── overnight_hourly_by_zone.csv
-│   └── overnight_peak_by_zone.csv
-├── notebooks/
-│   └── nyc_taxi_analysis.ipynb
-├── sql/
-│   └── analysis_queries.sql
-├── docs/
-│   ├── nyc_transit_equity_presentation.pdf
-│   └── SQL_README.docx
-├── scripts/
-└── images/
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🎯 Key Findings & Impact</h2>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">Top 5</span>
-                High-Need Zones Identified
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">30-50%</span>
-                Expected Wait Time Reduction
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">$1,200-1,800</span>
-                Annual Worker Savings Potential
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">3-Phase</span>
-                Implementation Strategy
-            </div>
-        </div>
-
-        <div class="highlight-box">
-            <h3>🌟 Top 5 High-Need Zones</h3>
-            <ol>
-                <li><strong>Williamsburg North Side:</strong> 70% overnight reliance</li>
-                <li><strong>East Williamsburg:</strong> 68% overnight reliance</li>
-                <li><strong>Eltingville/Annadale/Prince's Bay:</strong> 67% overnight reliance</li>
-                <li><strong>Bushwick North:</strong> 62% overnight reliance</li>
-                <li><strong>Williamsburg South Side:</strong> 60% overnight reliance</li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🚀 Project Resources</h2>
-        <p>Access the complete project files, data, and analysis:</p>
-        
-        <a href="https://github.com/ewiges3317/Final_NYC_Transit_Equity" class="github-link" target="_blank">
-            📂 View GitHub Repository
-        </a>
-        
-        <a href="https://github.com/ewiges3317/Final_NYC_Transit_Equity/blob/main/docs/nyc_transit_equity_presentation.pdf" class="github-link" target="_blank">
-            📊 Download Presentation
-        </a>
-        
-        <a href="https://github.com/ewiges3317/Final_NYC_Transit_Equity/blob/main/notebooks/nyc_taxi_analysis.ipynb" class="github-link" target="_blank">
-            💻 View Analysis Notebook
-        </a>
-
-        <div class="highlight-box">
-            <h3>📧 Contact</h3>
-            <p>This portfolio demonstrates advanced data analysis, SQL expertise, and policy-oriented thinking applied to real urban challenges.</p>
-        </div>
-    </div>
-</body>
-</html>
+            <span class="tech-tag">seaborn<span class="cursor">█</span>
