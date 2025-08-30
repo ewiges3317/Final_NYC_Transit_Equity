@@ -205,5 +205,63 @@
 
             <div class="chart-container">
                 <div class="chart-title">Highest Overnight Transit Dependence</div>
-                <img src="top_5_zones_overnight_reliance_simple.png" alt="Top 5 NYC zones with highest overnight transit dependence">
-                <div class="<span class="cursor">█</span>
+                <img src="visualizations/top_5_zones_overnight_reliance_simple.png" alt="Top 5 NYC zones with highest overnight transit dependence">
+                <div class="chart-insight">
+                    <strong>Key Finding:</strong> Five Manhattan zones show over 40% of all taxi trips occur during overnight hours (10PM-6AM), with Lower East Side leading at 59%. This reveals critical dependence on overnight transportation in dense urban areas.
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Geographic Transit Equity Gap</div>
+                <img src="visualizations/borough_equity_gap_simple.png" alt="Borough comparison showing transit equity gaps between Manhattan and outer boroughs">
+                <div class="chart-insight">
+                    <strong>Key Finding:</strong> Outer boroughs show significantly higher overnight transit dependence than Manhattan, with Staten Island at 29.3% vs Manhattan at 17.2% - a 12.1 percentage point equity gap revealing transportation disparities.
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Critical Service Gaps Timeline</div>
+                <img src="visualizations/overnight_service_gap_timeline_simple.png" alt="Timeline showing critical service gaps during overnight hours when demand drops">
+                <div class="chart-insight">
+                    <strong>Key Finding:</strong> Demand drops 11.7x from 10PM peak (335K trips) to 5AM low (29K trips), revealing critical service gaps during early morning hours when people still need transportation but options are severely limited.
+                </div>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <h2>Research Methodology</h2>
+            
+            <h3>Data Source</h3>
+            <div class="data-stats">
+                <div class="data-stat">
+                    <strong>Dataset:</strong> NYC Taxi & Limousine Commission Yellow Taxi data (2024)
+                </div>
+                <div class="data-stat">
+                    <strong>Coverage:</strong> February, April, July, October 2024
+                </div>
+                <div class="data-stat">
+                    <strong>Sample Size:</strong> 13.4M raw trips → 13.2M cleaned trips
+                </div>
+                <div class="data-stat">
+                    <strong>Overnight Focus:</strong> 2.3+ million overnight trips (10PM-5:59AM)
+                </div>
+                <div class="data-stat">
+                    <strong>Geographic Scope:</strong> All 5 boroughs + Newark Airport
+                </div>
+                <div class="data-stat">
+                    <strong>Analysis Zones:</strong> 265+ taxi zones (min. 10K trips per zone)
+                </div>
+            </div>
+
+            <h3>Technical Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">DuckDB</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">matplotlib</span>
+                <span class="tech-tag">seaborn</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
