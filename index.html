@@ -113,6 +113,46 @@
             border-radius: 10px;
             margin: 40px 0;
         }
+        .contact-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        .contact-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -155,6 +195,9 @@
                 font-size: 2em;
             }
             .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -261,6 +304,34 @@
                 <span class="tech-tag">matplotlib</span>
                 <span class="tech-tag">seaborn</span>
             </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Let's Connect</h2>
+            <p>Interested in discussing this analysis or exploring data science collaboration opportunities?</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <a href="mailto:jaredlandan87@gmail.com">jaredlandan87@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <a href="tel:8179051755">(817) 905-1755</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <a href="http://www.linkedin.com/in/jared-daniel-0a9b29300" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <a href="https://github.com/ewiges3317/Final_NYC_Transit_Equity" target="_blank">GitHub Repository</a>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 1.1em;">
+                <strong>Available for:</strong> Data Analyst, Business Intelligence, and Policy Research roles
+            </p>
         </div>
     </div>
 </body>
